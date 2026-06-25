@@ -34,7 +34,6 @@ public class SppController {
         }
     }
 
-    // Fungsi untuk Hapus Data
     public String hapus(String nis) {
         if (nis.trim().isEmpty()) return "Pilih data yang ingin dihapus!";
         try {
