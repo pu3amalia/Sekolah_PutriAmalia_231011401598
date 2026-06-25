@@ -8,17 +8,14 @@ import java.util.List;
 public class SppController {
     private final SppDAO dao = new SppDAO();
 
-    // Fungsi untuk menghandle login
     public boolean login(String username, String password) throws SQLException {
         return dao.validateLogin(username, password);
     }
 
-    // Fungsi untuk mengambil data (termasuk pencarian)
     public List<Spp> loadData(String keyword) throws SQLException {
-        return dao.getAllOrSearch(keyword); // Sudah disesuaikan dengan SppDAO
+        return dao.getAllOrSearch(keyword); 
     }
 
-    // Fungsi untuk Simpan atau Ubah Data dengan Validasi
     public String simpan(String nis, String nama, String kelas, String bulan, String status, boolean isEdit) {
         // Validasi Wajib diisi (tidak boleh kosong)
         if (nis.trim().isEmpty() || nama.trim().isEmpty() || kelas.trim().isEmpty()) {
